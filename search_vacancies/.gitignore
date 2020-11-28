@@ -1,4 +1,4 @@
-env/
+../env/
 /search_vacancies/parser/migrations
 .idea
 /search_vacancies/search_vacancies
