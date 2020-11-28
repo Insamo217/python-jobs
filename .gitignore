@@ -1,0 +1,6 @@
+/env/
+/parser/migrations
+.idea
+/search_vacancies
+/search_vacancies/parser/tests.py
+__pycache__/
