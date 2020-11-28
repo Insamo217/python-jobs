@@ -27,7 +27,7 @@ class Source(models.Model):
 class Vacancies(models.Model):
     title = models.CharField('Название вакансии', max_length=160)
     url = models.CharField(max_length=160, unique=True)
-    text = models.TextField('Описание вакансии')
+    text = models.TextField('Описание вакансии', null=True)
     published = models.DateField('Дата публикации', default=date.today)
     category = models.ForeignKey\
         (Category, verbose_name='Категория', on_delete=models.SET_NULL, null=True)
