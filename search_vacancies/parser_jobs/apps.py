@@ -2,4 +2,4 @@ from django.apps import AppConfig
 
 
 class ParcerConfig(AppConfig):
-    name = 'parser'
+    name = 'parser_jobs'
