@@ -1,9 +1,9 @@
 from django.db import models
-from datetime import date
+from datetime import datetime
 
 
 class Category(models.Model):
-    name = models.CharField('Категория', max_length=160, unique=True)
+    name = models.CharField('Категория', max_length=160, unique=False)
 
     def __str__(self):
         return self.name
@@ -14,7 +14,7 @@ class Category(models.Model):
 
 
 class Source(models.Model):
-    name = models.CharField('Источник', max_length=160, unique=True)
+    name = models.CharField('Источник', max_length=160, unique=False)
 
     def __str__(self):
         return self.name
@@ -28,7 +28,7 @@ class Vacancies(models.Model):
     title = models.CharField('Название вакансии', max_length=160)
     url = models.URLField('Ссылка на объявление', max_length=160, unique=True)
     text = models.TextField('Описание вакансии', null=True)
-    published = models.DateField('Дата публикации', default=date.today)
+    published = models.DateTimeField('Дата публикации', default=datetime.now())
     category = models.ForeignKey\
         (Category, verbose_name='Категория', on_delete=models.SET_NULL, null=True)
     source = models.ForeignKey\
