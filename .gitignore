@@ -1,6 +1,11 @@
 /env/
-/parser/migrations
 .idea
-/search_vacancies
-/search_vacancies/parser/tests.py
 __pycache__/
+/search_vacancies/parser_jobs/migrations
+/search_vacancies/search_vacancies
+/search_vacancies/parser_jobs/tests.py
+
+/search_vacancies/parser_jobs/adddb.py
+/search_vacancies/parser_jobs/forms.py
+
+
