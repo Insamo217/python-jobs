@@ -29,11 +29,13 @@ def get_joblab_snippets():
             title = job.find('a').text
             url = job.find('a')['href']
             url_full = 'https://joblab.ru' + url
-            save_vacancies = Vacancies(
-                title=title,
-                url=url_full,
-                published=datetime.now(),
-            ).save()
+            vacancies_exists = Vacancies.objects.filter(url=url_full).count()
+            if not vacancies_exists:
+                save_vacancies = Vacancies(
+                    title=title,
+                    url=url_full,
+                    published=datetime.now(),
+                ).save()
 
 
 class Command(BaseCommand):
