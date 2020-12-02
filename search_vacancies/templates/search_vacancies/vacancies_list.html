@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Вакансии</title>>
+</head>
+<body>
+<h2>Вакансии</h2>
+{% for vacancy in vacancies_list%}
+    <h3><a href="{{ vacancy.url }}">{{ vacancy.title }}</a></h3>
+    <p> {{ vacancy.published }} </p>
+    <hr >
+{% endfor %}
+</body>
+</html>
