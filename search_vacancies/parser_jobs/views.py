@@ -11,14 +11,14 @@ class MainView(View):
 
 class JoblabView(View):
     def get(self, request):
-        vacancies = Vacancies.objects.filter().order_by('-published')
+        vacancies = Vacancies.objects.filter(source_id=1).order_by('-published')
         return render(request, 'search_vacancies/vacancies_list.html',
                       {'vacancies_list': vacancies})
 
 
 class HHView(View):
     def get(self, request):
-        vacancies = Vacancies.objects.filter().order_by('-published')
+        vacancies = Vacancies.objects.filter(source_id=2).order_by('-published')
         return render(request, 'search_vacancies/vacancies_list.html',
                       {'vacancies_list': vacancies})
 
