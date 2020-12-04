@@ -35,7 +35,12 @@ def get_joblab_snippets():
                     title=title,
                     url=url_full,
                     published=datetime.now(),
+                    source_id=1
                 ).save()
+                '''
+                source_id=1 - Joblab.ru
+                source_id=2 - HH.ru
+                '''
 
 
 class Command(BaseCommand):
