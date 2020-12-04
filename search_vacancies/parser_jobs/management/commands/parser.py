@@ -2,7 +2,7 @@ import requests
 from bs4 import BeautifulSoup
 from datetime import datetime
 from django.core.management.base import BaseCommand
-from parser_jobs.models import Category, Vacancies, Source
+from parser_jobs.models import Vacancies, Source
 
 
 def get_html(url):
