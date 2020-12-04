@@ -3,5 +3,7 @@ from. import views
 
 
 urlpatterns = [
-    path('', views.VacancyView.as_view())
+    path('joblab/', views.JoblabView.as_view()),
+    path('hh/', views.HHView.as_view()),
+    path('', views.MainView.as_view()),
 ]
