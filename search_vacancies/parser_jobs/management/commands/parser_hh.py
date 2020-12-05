@@ -4,9 +4,10 @@ from django.core.management.base import BaseCommand
 from parser_jobs.models import Vacancies, Source
 
 
-def get_hh_snippets(page = 0):
+def get_hh_snippets(page=0):
     params = {
-        'text': 'NAME:Python',
+        'text': 'Python',
+        'search_field': 'description',
         'experience': 'noExperience',
         'schedule': 'remote',
         'employment': 'full',
@@ -19,17 +20,18 @@ def get_hh_snippets(page = 0):
     req = requests.get('https://api.hh.ru/vacancies', params)
     data = req.json()
     for i in data['items']:
-        name = (i['name'])
+        title = (i['name'])
         url = (i['alternate_url'])
         published = (i['created_at'])
         vacancies_exists = Vacancies.objects.filter(url=url).count()
         if not vacancies_exists:
             save_vacancies = Vacancies(
-                title=name,
+                title=title,
                 url=url,
                 published=published,
                 source_id=2
             ).save()
+            print(title)
 
             '''
             source_id=1 - Joblab.ru

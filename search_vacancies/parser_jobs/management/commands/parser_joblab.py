@@ -37,6 +37,7 @@ def get_joblab_snippets():
                     published=datetime.now(),
                     source_id=1
                 ).save()
+                print(title)
                 '''
                 source_id=1 - Joblab.ru
                 source_id=2 - HH.ru
